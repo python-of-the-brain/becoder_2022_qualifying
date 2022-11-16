@@ -17,7 +17,7 @@ class Pronouns:
 
 PRONOUNS = {
     "ru": Pronouns(
-        first=[
+        first=[  # список личных местоимений первого лица
             "я",
             "меня",
             "мне",
@@ -31,7 +31,7 @@ PRONOUNS = {
             "нами",
             "нами",
         ],
-        other=[
+        other=[  # список остальных личных местоимений
             "ты",
             "тебя",
             "тебе",
@@ -163,7 +163,7 @@ def main():
     parser = get_parser()
     args = parser.parse_args()
     try:
-        response = requests.get(args.url)
+        response = requests.get(args.url, allow_redirects=True)
         if not response.ok:
             raise Exception
     except Exception:
